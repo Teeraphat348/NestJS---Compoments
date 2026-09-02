@@ -1,36 +1,67 @@
 import Image from "next/image";
-import { Band } from "@/types/band";
 
-interface BandCardProps {
-  band: Band;
+interface Member {
+  name: string;
+  role: string;
 }
 
-export default function BandCard({ band }: BandCardProps) {
+interface Band {
+  id: string;
+  name: string;
+  genre: string;
+  members: Member[];
+  image: string;
+  description: string;
+}
+
+export default function BandCard({ band }: { band: Band }) {
   return (
-    <div className="border rounded-lg shadow-md overflow-hidden bg-white max-w-sm mx-auto my-4">
-      {/* จำกัดความสูงกล่องใส่รูปไว้ที่ h-64 */}
-      <div className="relative w-full h-64 bg-gray-100">
+    <div
+      style={{
+        border: "1px solid #e5e7eb",
+        borderRadius: "8px",
+        padding: "16px",
+        backgroundColor: "#ffffff",
+        maxWidth: "350px",
+        margin: "16px auto",
+        boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+      }}
+    >
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "250px",
+          marginBottom: "12px",
+          overflow: "hidden",
+          borderRadius: "6px",
+        }}
+      >
         <Image
           src={band.image}
           alt={band.name}
           fill
-          className="object-cover"
+          style={{ objectFit: "cover" }}
         />
       </div>
-      <div className="p-4">
-        <div className="flex justify-between items-center mb-2">
-          <h2 className="text-xl font-bold text-gray-900">{band.name}</h2>
-          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
-            {band.genre}
-          </span>
-        </div>
-        <p className="text-gray-600 text-sm mb-4">{band.description}</p>
-        
-        <h3 className="text-sm font-semibold text-gray-800 mb-2">สมาชิก:</h3>
-        <ul className="text-sm text-gray-600 space-y-1">
+      <h2 style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "4px", color: "#111827" }}>
+        {band.name}
+      </h2>
+      
+      {/* เพิ่มคำว่า แนวเพลง: ด้านหน้า */}
+      <p style={{ fontSize: "14px", color: "#059669", fontWeight: "600", marginBottom: "8px" }}>
+        แนวเพลง: {band.genre}
+      </p>
+
+      <p style={{ fontSize: "14px", color: "#4b5563", marginBottom: "12px" }}>
+        {band.description}
+      </p>
+      <div>
+        <strong style={{ fontSize: "14px", color: "#374151" }}>สมาชิก:</strong>
+        <ul style={{ paddingLeft: "20px", margin: "4px 0 0 0", fontSize: "14px", color: "#4b5563" }}>
           {band.members.map((member, index) => (
             <li key={index}>
-              • {member.name} ({member.role})
+              {member.name} ({member.role})
             </li>
           ))}
         </ul>

@@ -1,25 +1,39 @@
 import Link from "next/link";
 
 export default function Navbar() {
+  const linkStyle = {
+    color: "#ffffff",
+    textDecoration: "none",
+    margin: "0 15px",
+    fontSize: "16px",
+    fontWeight: "500",
+  };
+
   return (
-    <nav className="navbar" aria-label="เมนูหลัก">
-      <ul className="navList">
-        <li>
-          <Link className="navLink" href="/">
-            หน้าแรก
-          </Link>
-        </li>
-        <li>
-          <Link className="navLink" href="/courses">
-            รายวิชา
-          </Link>
-        </li>
-        <li>
-          <Link className="navLink" href="/about">
-            เกี่ยวกับ
-          </Link>
-        </li>
-      </ul>
+    <nav
+      style={{
+        backgroundColor: "#064e3b",
+        padding: "16px 0",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div>
+        <Link href="/" style={linkStyle}>
+          หน้าแรก
+        </Link>
+        <Link href="/courses" style={linkStyle}>
+          รายวิชา
+        </Link>
+        <Link href="/about" style={linkStyle}>
+          เกี่ยวกับ
+        </Link>
+        <Link href="/bands" style={linkStyle}>
+          วงดนตรีโปรด
+        </Link>
+      </div>
     </nav>
   );
 }

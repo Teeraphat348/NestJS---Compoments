@@ -3,21 +3,25 @@ import { Band } from "@/types/band";
 export const bandsData: Band[] = [
   {
     id: "1",
-    name: "BLVCKHEART",
-    genre: "Pop / R&B / Hip-Hop",
-    image: "/images/bands/BLVCKHEART.jpg",
-    description: "ศิลปินเดี่ยวฮิปฮอป เจ้าของเพลง ฟีโรโมน และ อยากจะกอดเธอนานๆ",
+    name: "25hours",
+    genre: "Alternative Rock / Britpop",
+    image: "/images/bands/25hours.jpg",
+    description: "เจ้าของเพลง ทำได้เพียง, ยินดีที่ไม่รู้จัก และ ไม่เคย",
     members: [
-      { name: "แซม (BLACKHEART)", role: "ศิลปินเดี่ยว / นักร้องนำ" },
+      { name: "สมพล รุ่งพาณิชย์ (แหลม)", role: "ร้องนำ" },
+      { name: "ประทีป สิริอิสสระนันท์ (โฟร์)", role: "กีต้าร์" },
+      { name: "ปิยวัฒน์ มีเครือ (ปู๋)", role: "กีต้าร์" },
+      { name: "เอกศิริ กำบังภัย (บัง)", role: "เบส" },
+      { name: "กฤตพงศ์ สกุลนามอเนก (จ๊อบ)", role: "กลอง" },
     ],
   },
 
   {
     id: "2",
     name: "Three Man Down",
-    genre: "Pop Rock / Alternative Rock",
+    genre: "Pop Rock",
     image: "/images/bands/Three Man Down.jpg",
-    description: "เจ้าของเพลง ฝนตกไหม และ ถ้าเธอรักใครจริง",
+    description: "เจ้าของเพลง ฝนตกไหม และ ถ้าเธอรักฉันจริง",
     members: [
       { name: "กิต - กฤตย์ จีรพัฒนานุวงศ์", role: "ร้องนำ" },
       { name: "ตูน - พีรพล เอี่ยมจำรัส", role: "กีตาร์" },
@@ -27,12 +31,16 @@ export const bandsData: Band[] = [
 
   {
     id: "3",
-    name: "guncharlie",
-    genre: "Indie Pop / T-Pop",
-    image: "/images/bands/guncharlie.jpg",
-    description: "เจ้าของเพลง สถานะคุย และ เผื่อวันไหนเธอจะกลับมา",
+    name: "SERIOUS BACON",
+    genre: "Pop",
+    image: "/images/bands/SERIOUS BACON.jpg",
+    description: "เจ้าของเพลง พี่ๆ ตัดแว่นให้หน่อย และ ไม่พิเศษ",
     members: [
-      { name: "กันต์ (guncharlie)", role: "ศิลปินเดี่ยว / นักร้องนำ" },
+      { name: "เปรมิกา จิระนารักษ์ (เค้ก)", role: "นักร้อง" },
+      {
+        name: "สองเมือง ไชยฤทธิ์ (เมือง)",
+        role: "นักร้อง กีตาร์ เบส กลอง เปียโน",
+      },
     ],
   },
 ];

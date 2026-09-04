@@ -3,6 +3,7 @@ import Image from "next/image";
 interface Member {
   name: string;
   role: string;
+  image?: string;
 }
 
 interface Band {
@@ -48,7 +49,6 @@ export default function BandCard({ band }: { band: Band }) {
         {band.name}
       </h2>
       
-      {/* เพิ่มคำว่า แนวเพลง: ด้านหน้า */}
       <p style={{ fontSize: "14px", color: "#059669", fontWeight: "600", marginBottom: "8px" }}>
         แนวเพลง: {band.genre}
       </p>
@@ -58,10 +58,19 @@ export default function BandCard({ band }: { band: Band }) {
       </p>
       <div>
         <strong style={{ fontSize: "14px", color: "#374151" }}>สมาชิก:</strong>
-        <ul style={{ paddingLeft: "20px", margin: "4px 0 0 0", fontSize: "14px", color: "#4b5563" }}>
+        <ul style={{ paddingLeft: "0", listStyle: "none", margin: "8px 0 0 0", fontSize: "14px", color: "#4b5563" }}>
           {band.members.map((member, index) => (
-            <li key={index}>
-              {member.name} ({member.role})
+            <li key={index} style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+              {member.image ? (
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  style={{ width: "40px", height: "40px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
+                />
+              ) : (
+                <div style={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: "#e5e7eb", flexShrink: 0 }} />
+              )}
+              <span>{member.name} ({member.role})</span>
             </li>
           ))}
         </ul>
